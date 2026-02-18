@@ -58,12 +58,12 @@ public class AddEmployeeSteps extends CommonMethods {
     @When("user enters employee last name {string}")
     public void user_enters_employee_last_name(String lastName) {
         AddEmployeePage addEmp = new AddEmployeePage();
-        addEmp.firstNameloc.sendKeys(lastName);
+        addEmp.lastNameloc.sendKeys(lastName);
     }
 
     @Then("the system should display an error message for required fields")
     public void userShouldSeeErrorMessageForEmptyFirstNameField() {
-
+        AddEmployeePage addEmployeePage = new AddEmployeePage();
         String actualMessage = addEmployeePage.firstNameErrorMsg.getText();
         Assert.assertEquals("Required", actualMessage);}
 
