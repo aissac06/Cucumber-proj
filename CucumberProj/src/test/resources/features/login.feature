@@ -11,7 +11,7 @@ Feature: Login validation
     Then error message "Required" should be displayed
 
   Scenario: Invalid credentials
-    When user enters invalid username and password
+    When user enters invalid username "WrongUser" and password "WrongPass"
     And user clicks login button
     Then error message "Invalid credentials" should be displayed
     When user enters valid username and password

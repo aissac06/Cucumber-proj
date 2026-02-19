@@ -22,18 +22,20 @@ public class LoginSteps extends CommonMethods {
 
     @When("user enters username")
     public void user_enters_username() {
-        loginPage.usernameField.sendKeys("admin");
+        String username = ConfigReader.getProperty("userName");
+        loginPage.usernameField.sendKeys(username);
     }
 
     @When("user enters password")
     public void user_enters_password() {
-        loginPage.passwordField.sendKeys("admin123");
+        String password = ConfigReader.getProperty("password");
+        loginPage.passwordField.sendKeys(password);
     }
 
-    @When("user enters invalid username and password")
-    public void user_enters_invalid_username_and_password() {
-        loginPage.usernameField.sendKeys("WrongUser");
-        loginPage.passwordField.sendKeys("WrongPass");
+    @When("user enters invalid username {string} and password {string}")
+    public void user_enters_invalid_username_and_password(String invUsername, String invPassword) {
+        loginPage.usernameField.sendKeys(invUsername);
+        loginPage.passwordField.sendKeys(invPassword);
     }
 
     @When("user clicks login button")

@@ -26,8 +26,8 @@ public class AddEmployeeSteps extends CommonMethods {
     @And("the admin enters first name {string} and last name {string}")
     public void admin_enters_first_and_last_name(String firstName, String lastName) {
         AddEmployeePage addEmp = new AddEmployeePage();
-        addEmp.firstNameloc.sendKeys("John");
-        addEmp.lastNameloc.sendKeys("Doe");
+        addEmp.firstNameloc.sendKeys(firstName);
+        addEmp.lastNameloc.sendKeys(lastName);
     }
     @When("the admin clicks the Save button")
     public void admin_clicks_save_button() {
@@ -48,7 +48,7 @@ public class AddEmployeeSteps extends CommonMethods {
     public void admin_clears_and_enters_a_custom_employee_id(String empID) {
         AddEmployeePage addEmp = new AddEmployeePage();
         addEmp.employeeIdField.clear();
-        addEmp.employeeIdField.sendKeys("A12345");
+        addEmp.employeeIdField.sendKeys(empID);
 }
 
 
